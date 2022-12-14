@@ -1,1 +1,46 @@
- 
+:root {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  font-family: fantasy;
+}
+/* Header Style */
+header {
+  top: 2rem;
+  position: absolute;
+  color: snow;
+}
+
+a {
+  font-style: italic;
+  color: rebeccapurple;
+}
+a:hover {
+  color: purple;
+}
+a:active {
+  color: green;
+  transition: color 0.2s linear;
+}
+
+@media only screen and (max-height: 428px) {
+  header {
+    visibility: hidden;
+  }
+}
+/* Drum Pad Style */
+#drum-machine {
+  display: flex;
+  gap: 1rem;
+  background-color: aqua;
+  padding: 2rem;
+  border-radius: 1rem;
+  border-left: 6px solid crimson;
+  border-right: 6px solid orange;
+}
+
+#drum-pads {
+  display: grid;
+}
