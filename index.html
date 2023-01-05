@@ -4,13 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="./style.css" rel="stylesheet">
-  <link href="./favicon.ico" rel="icon">
-  <script src="./jquery-3.6.2.min.js" defer></script>
-  <script src="./script.js" defer></script>
+  <link href="style.css" rel="stylesheet">
+  <link href="favicon.ico" rel="icon">
+  <script src="assets/jquery-3.6.2.min.js" defer></script>
+  <script src="script.js" defer></script>
 <!-- Temp. Refresh Start -->
   <script>
-    setInterval(() => document.location.reload(), 1000)
+    setInterval(() => document.location.reload(), 1000);
   </script>
 <!-- Temp. Refresh End -->
   <title>Drum Machine</title>
@@ -62,9 +62,10 @@
       <div id="display">
         Display
       </div>
-    <!-- Volume Bar Here
-
-    -->
+      <div id="volume">
+        <img src="assets/volume-high-solid.svg">
+        <input id="volume-bar" type="range" min="1" max="5" value="3">
+      </div>
     <!-- Switch Here
 
     -->

@@ -3,26 +3,31 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: black;
-  font-family: fantasy;
+  font-family: Impact, fantasy;
+  background-color: var(--black);
+  background-image: url("assets/background.jpg");
+  background-size: cover;
+  --black: #111;
+  --orange: darkorange;
+  --pink: deeppink;
 }
 /* Header Style */
 header {
-  top: 2rem;
   position: absolute;
   color: snow;
+  top: 2rem;
 }
 
 a {
   font-style: italic;
-  color: rebeccapurple;
+  color: var(--pink);
+  transition: color .2s linear;
 }
 a:hover {
-  color: purple;
+  color: var(--orange);
 }
 a:active {
-  color: green;
-  transition: color 0.2s linear;
+  color: limegreen;
 }
 
 @media only screen and (max-height: 428px) {
@@ -34,13 +39,63 @@ a:active {
 #drum-machine {
   display: flex;
   gap: 1rem;
-  background-color: aqua;
   padding: 2rem;
   border-radius: 1rem;
-  border-left: 6px solid crimson;
-  border-right: 6px solid orange;
+  background-color: deepskyblue;
+  border-right: 6px solid var(--orange);
+  border-left: 6px solid var(--pink);
 }
 
 #drum-pads {
   display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+}
+
+.drum-pad {
+  font-family: "Cantarell", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 1rem;
+  color: snow;
+  background-color: var(--black);
+  border: 2px solid var(--pink);
+  box-shadow: 0 0 3px 1px var(--pink);
+}
+.drum-pad:hover {
+  border-color: var(--orange);
+  box-shadow: 0 0 3px 1px var(--orange);
+}
+.drum-pad:active {
+  color: var(--black);
+  background-color: var(--orange);
+}
+/* Volume Style */
+#volume {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+#volume > img {
+  width: 20px;
+  height: 20px;
+}
+
+#volume-bar {
+  width: 6rem;
+  height: 8px;
+  background: var(--black);
+  border-radius: 6px;
+}
+#volume-bar::-webkit-slider-thumb,
+#volume-bar::-moz-range-thumb {
+  width: 8px;
+  height: 1rem;
+  background: var(--black);
+  border: 2px solid var(--pink);
+}
+#volume-bar:hover::-webkit-slider-thumb,
+#volume-bar:hover::-moz-range-thumb {
+  border-color: var(--orange);
 }
