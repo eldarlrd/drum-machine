@@ -94,21 +94,21 @@ a:hover {
   gap: 3px;
 }
 
-.volume-bar {
+#volume-bar {
   width: 6rem;
   height: 6px;
   border-radius: 6px;
   background: var(--black);
 }
-.volume-bar::-webkit-slider-thumb,
-.volume-bar::-moz-range-thumb {
+#volume-bar::-webkit-slider-thumb,
+#volume-bar::-moz-range-thumb {
   width: 8px;
   height: 14px;
   background: var(--black);
   border: 2px solid var(--pink);
 }
-.volume-bar:hover::-webkit-slider-thumb,
-.volume-bar:hover::-moz-range-thumb {
+#volume-bar:hover::-webkit-slider-thumb,
+#volume-bar:hover::-moz-range-thumb {
   border-color: var(--orange);
 }
 /* Switch Style */

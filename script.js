@@ -2,26 +2,65 @@
 $(document).ready(() => {
   $(this).keydown(key => {
     key.keyCode !== 82
-    ? handleDrum(key.keyCode)
-    : handleSwitch(key.keyCode);
+      ? keyStyle(key.keyCode)
+      : keySwitch(key.keyCode);
   });
-  $(".drum-pad").click(() => {
-    handleDrum();
+  $(".drum-pad").click(function() {
+    drumStyle($(this));
   });
+  $("#volume-bar").change(volControl);
+  volCheck();
 });
-// Drum Player
-const handleDrum = num => {
+// Drum Styler (Keyboard)
+const keyStyle = num => {
   const btn = $(keys[num].id);
   btn.addClass("drumActive");
   setTimeout(() => {
     btn.removeClass("drumActive");
   }, 400);
 };
-// Instrument Switch
-const handleSwitch = r => {
-
+// Toggle Switch (Keyboard)
+const keySwitch = () => {
+  $("#toggle").is(":checked")
+    ? $("#toggle").prop("checked", false)
+    : $("#toggle").prop("checked", true);
 };
-// Keys Object
+// Drum Styler
+const drumStyle = str => {
+  const elem = $(str);
+  elem.addClass("drumActive");
+  setTimeout(() => {
+    elem.removeClass("drumActive");
+  }, 400);
+};
+// Volume Controls
+const volControl = () => {
+  const i = $("#volume-bar").val();
+  switch (i) {
+    case "0":
+      $(".clip").prop("volume", 0);
+      break;
+    case "1":
+      $(".clip").prop("volume", .25);
+      break;
+    case "2":
+      $(".clip").prop("volume", .5);
+      break;
+    case "3":
+      $(".clip").prop("volume", .75);
+      break;
+    case "4":
+      $(".clip").prop("volume", 1);
+  }
+  volCheck();
+};
+// Volume Checker
+const volCheck = () => {
+  $("#volume-bar").val() != 0
+    ? $("#volume-icon").prop("src", volIcon.high)
+    : $("#volume-icon").prop("src", volIcon.low);
+};
+// Keycodes
 const keys = {
   81: {
     "id": "#sound-1"
@@ -49,13 +88,10 @@ const keys = {
   },
   67: {
     "id": "#sound-9"
-  },
-  82: {
-
   }
 };
-/* Keycodes
-  Q 81, W 87, E 69
-  A 65, S 83, D 68,
-  Z 90, X 88, C 67, R 82
-*/
+// Volume Icons
+const volIcon = {
+  "high": "assets/icons/volume-high-solid.svg",
+  "low": "assets/icons/volume-xmark-solid.svg"
+};

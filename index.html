@@ -10,7 +10,7 @@
   <script src="script.js" defer></script>
 <!-- Temp. Refresh Start -->
   <script>
-    setInterval(() => document.location.reload(), 1000);
+    //setInterval(() => document.location.reload(), 1000);
   </script>
 <!-- Temp. Refresh End -->
   <title>Drum Machine</title>
@@ -63,9 +63,8 @@
         Display
       </div>
       <div id="volume">
-        <!-- <img class="icon" src="assets/icons/volume-xmark-solid.svg"> -->
-        <img class="icon" src="assets/icons/volume-high-solid.svg">
-        <input class="volume-bar" type="range" min="1" max="5" value="3">
+        <img id="volume-icon" class="icon">
+        <input id="volume-bar" type="range" min="0" max="4" value="2">
       </div>
       <div id="switch">
         <img class="icon" src="assets/icons/drum-solid.svg">
