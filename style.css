@@ -53,6 +53,7 @@ a:hover {
 .drum-pad {
   width: 2rem;
   height: 2rem;
+  outline: none;
   font-family: "Cantarell", sans-serif;
   font-weight: bold;
   font-size: 1rem;
@@ -95,19 +96,30 @@ a:hover {
 }
 
 #volume-bar {
+  appearance: none;
+  outline: none;
   width: 6rem;
   height: 6px;
   border-radius: 6px;
   background: var(--black);
 }
-#volume-bar::-webkit-slider-thumb,
+#volume-bar::-webkit-slider-thumb {
+  appearance: none;
+  width: 12px;
+  height: 18px;
+  border-radius: 6px;
+  background: var(--black);
+  border: 2px solid var(--pink);
+}
 #volume-bar::-moz-range-thumb {
   width: 8px;
   height: 14px;
   background: var(--black);
   border: 2px solid var(--pink);
 }
-#volume-bar:hover::-webkit-slider-thumb,
+#volume-bar:hover::-webkit-slider-thumb {
+  border-color: var(--orange);
+}
 #volume-bar:hover::-moz-range-thumb {
   border-color: var(--orange);
 }
