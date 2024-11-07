@@ -1,0 +1,25 @@
+{
+  "name": "Drum Machine",
+  "short_name": "Drum Machine",
+  "dir": "ltr",
+  "lang": "en",
+  "categories": [
+    "entertainment",
+    "music",
+    "utilities"
+  ],
+  "display": "fullscreen",
+  "orientation": "natural",
+  "theme_color": "#ff1493",
+  "background_color": "#00bfff",
+  "description": "A Drum Machine",
+  "start_url": "https://eldarlrd.github.io/drum-machine/",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ]
+}
